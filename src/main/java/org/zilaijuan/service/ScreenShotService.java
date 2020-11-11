@@ -2,6 +2,7 @@ package org.zilaijuan.service;
 
 import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
+import com.sun.java.swing.plaf.windows.resources.windows;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -58,11 +59,10 @@ public class ScreenShotService extends JWindow {
                 try {
                     qRresult = ScanService.getQRresult(saveImage);
                     String text = qRresult.getText();
-                    System.out.println("qRresult = " + text);
                     frame.updateTxt(text);
                 } catch (NotFoundException notFoundException) {
-                    notFoundException.printStackTrace();
-                    System.out.println("没有找到二维码");
+//                    notFoundException.printStackTrace();
+//                    System.out.println("没有找到二维码");
                     frame.updateTxt("没有找到二维码");
                 }
 
@@ -137,12 +137,13 @@ public class ScreenShotService extends JWindow {
 
     public void close(){
         this.setVisible(false);
+        this.frame.getjFrame().setVisible(true);
 //        try {
 //            Thread.sleep(10000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println(" again" );
+//        System.out.println(" again" );
 //        this.setVisible(true);
     }
 }

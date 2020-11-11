@@ -16,11 +16,15 @@ public class MainFrame {
     private JFrame jFrame;
     private JTextArea textArea;
 
+    public JFrame getjFrame(){
+        return this.jFrame;
+    }
+
     public JFrame initFrame() throws AWTException {
-        JFrame frame = new JFrame("Java按钮组件示例");    //创建Frame窗口
+        JFrame frame = new JFrame("二维码扫描");    //创建Frame窗口
         frame.setSize(400, 200);
         JPanel jp = new JPanel();    //创建JPanel对象
-        JButton btn = new JButton("我是普通按钮");    //创建JButton对象
+        JButton btn = new JButton("扫描");    //创建JButton对象
         ScanAction scanAction = new ScanAction(this);
         btn.addActionListener(scanAction);
         jp.add(btn);
@@ -34,6 +38,7 @@ public class MainFrame {
         frame.add(jp);
         frame.setBounds(300, 200, 600, 300);
 
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.jFrame = frame;
         this.textArea = ta;
@@ -43,5 +48,6 @@ public class MainFrame {
     public void updateTxt(String txt){
         textArea.setText(txt);
     }
+
 
 }

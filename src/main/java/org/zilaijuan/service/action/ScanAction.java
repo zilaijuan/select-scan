@@ -32,6 +32,5 @@ public class ScanAction implements ActionListener {
         } catch (AWTException awtException) {
             awtException.printStackTrace();
         }
-
     }
 }

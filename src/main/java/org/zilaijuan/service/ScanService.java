@@ -31,7 +31,7 @@ public class ScanService {
             hints.put(EncodeHintType.CHARACTER_SET, CHARTSET);
             result = new MultiFormatReader().decode(bitmap, hints);
         } catch (NotFoundException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             throw e;
         }
 
